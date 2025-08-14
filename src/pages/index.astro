@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Skills from '../components/Skills.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Mi Portfolio">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center relative overflow-hidden">
+      <div class="absolute inset-0 matrix-bg animate-matrix z-0"></div>
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center relative z-10">
+        <div>
+          <h1 class="text-5xl font-bold mb-6">
+            Diseño y desarrollo de plataformas web
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            Inicia tu presencia digital con una página web escalable.
+            Presenta tus productos, administra ventas, realiza cotizaciones
+            y obtén reportes de manera rápida y accesible.
+          </p>
+          <a
+            href="#contacto"
+            class="inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition-colors"
+          >
+            ¡Comencemos!
+          </a>
+        </div>
+        <div class="flex justify-center">
+          <img
+            src="https://avatars.githubusercontent.com/u/1234567?v=4"
+            alt="Avatar"
+            class="w-64 h-64 rounded-full border-4 border-accent"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-secondary">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Mis Skills</h2>
+        <Skills />
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Mi Portfolio</h2>
+        <Portfolio />
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  .matrix-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(0deg, transparent, rgba(0, 255, 157, 0.2));
+    animation: matrix 20s linear infinite;
+    transform: translateY(-50%);
+  }
+
+  @keyframes matrix {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(50%);
+    }
+  }
+</style>
